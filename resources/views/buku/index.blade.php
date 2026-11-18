@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="id"><head><meta charset="utf-8"><title>Daftar Buku</title></head>
 <body>
+
+    <p>Masuk sebagai {{ auth()->user()->name }}</p>
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit">Keluar</button>
+    </form>
+
 <h1>Daftar Buku</h1>
 <p><a href="{{ route('buku.create') }}">Tambah Buku</a></p>
 @if (session('status')) <p>{{ session('status') }}</p> @endif
